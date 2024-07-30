@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  swecomintegration:
+    build:
+      context: .
+      dockerfile: src/ListaContatoApi/Dockerfile
+    ports:
+      - "3000:8080"
+      
+    volumes:
+      - ./logs:/app/logs 
+
+    depends_on:
+      - postgresdb
+
+   
+   
+    
+  postgresdb:
+    image: postgres
+    ports:
+      - "5432:5432"
+    
+    volumes:
+     - ./lotacao.sql:/docker-entrypoint-initdb.d/lotacao.sql
+     - ./pessoa.sql:/docker-entrypoint-initdb.d/pessoa.sql
+    environment:
+      POSTGRES_PASSWORD: "Postgres2022!"
+
+   
+networks: 
+    oficina_network:
+      driver: bridge
+    
+
+volumes:
+
+  postgresdatavol:
+    driver: local 
+  logs:

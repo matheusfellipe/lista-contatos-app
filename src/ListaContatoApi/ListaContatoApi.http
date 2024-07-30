@@ -1,0 +1,6 @@
+@ListaContatoApi_HostAddress = http://localhost:5171
+
+GET {{ListaContatoApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
