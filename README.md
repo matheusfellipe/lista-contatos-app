@@ -2,7 +2,7 @@
 
 ## Pré-requisitos Docker
 
-Certifique-se de ter o Docker instalado e em execução no seu sistema. Siga as instruções oficiais para sua plataforma: [Documentação do Docker](https://docs.docker.com/get-docker/)
+Certifique-se de ter o Docker e o compose instalado e em execução no seu sistema. Siga as instruções oficiais para sua plataforma: [Documentação do Docker](https://docs.docker.com/get-docker/)
 
 ## Subindo o projeto
 
