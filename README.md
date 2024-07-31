@@ -1,11 +1,19 @@
-Pré-requisitos
-Docker: Certifique-se de ter o Docker instalado e em execução no seu sistema. Siga as instruções oficiais para sua plataforma: https://docs.docker.com/get-docker/
+# Instruções para Configuração do Projeto
 
-Faça clone ou baixe o zip do repositório back-end
+## Pré-requisitos Docker
+
+Certifique-se de ter o Docker instalado e em execução no seu sistema. Siga as instruções oficiais para sua plataforma: [Documentação do Docker](https://docs.docker.com/get-docker/)
+
+## Clonar o Repositório
+
+Faça o clone ou baixe o zip do repositório back-end:
+```bash
 git clone https://github.com/matheusfellipe/lista-contatos-app.git
 
-No terminal de comando vá até a raiz do projeto
+## Navegar até a Raiz do Projeto
+```bash
 cd lista-contatos-app
 
-execute o comando
+## Executar o Docker Compose
+```bash
 docker-compose up --build -d
