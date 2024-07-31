@@ -4,7 +4,7 @@
 
 Certifique-se de ter o Docker instalado e em execução no seu sistema. Siga as instruções oficiais para sua plataforma: [Documentação do Docker](https://docs.docker.com/get-docker/)
 
-## Clonar o Repositório
+## Subindo o projeto
 
 Faça o clone ou baixe o zip do repositório back-end:
 ```bash
