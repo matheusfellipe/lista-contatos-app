@@ -10,11 +10,11 @@ Faça o clone ou baixe o zip do repositório back-end:
 ```bash
 git clone https://github.com/matheusfellipe/lista-contatos-app.git
 
-## Navegar até a Raiz do Projeto
+## Navegar até a pasta raiz do projeto no cmd/prompt de comando
 cd lista-contatos-app
 
 ## Executar o Docker Compose
 docker-compose up --build -d
 ```
 
-Obtendo sucesso, acesse o swagger aqui: [Documentação da API](http://localhost:3000/swagger/index.html)
+Obtendo sucesso na execução, acesse o swagger aqui: [Documentação da API](http://localhost:3000/swagger/index.html)
