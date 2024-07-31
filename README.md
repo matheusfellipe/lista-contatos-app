@@ -15,3 +15,6 @@ cd lista-contatos-app
 
 ## Executar o Docker Compose
 docker-compose up --build -d
+```
+
+Obtendo sucesso, acesse o swagger aqui: [Documentação da API](http://localhost:3000/swagger/index.html)
