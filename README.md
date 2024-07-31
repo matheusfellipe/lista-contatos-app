@@ -11,9 +11,7 @@ Faça o clone ou baixe o zip do repositório back-end:
 git clone https://github.com/matheusfellipe/lista-contatos-app.git
 
 ## Navegar até a Raiz do Projeto
-```bash
 cd lista-contatos-app
 
 ## Executar o Docker Compose
-```bash
 docker-compose up --build -d
