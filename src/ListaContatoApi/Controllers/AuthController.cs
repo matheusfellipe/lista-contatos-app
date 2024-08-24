@@ -19,11 +19,11 @@ namespace ListaContatoApi.Controllers
 
 
         [HttpPost("Login")]
-        public async Task<string> GetUsuarioExistente([FromQuery] string cpf)
+        public async Task<bool> GetUsuarioExistente([FromQuery] string cpf, [FromQuery] DateTime dt_nascimento)
         {
-            var flag = await _contatoFinder.ContatoExistente(cpf);
-            if (flag == true) return "Autorizado";
-            else return "Negado";
+            var flag = await _contatoFinder.ContatoExistente(cpf, dt_nascimento);
+            if (flag == true) return true;
+            else return false;
 
         }
     }

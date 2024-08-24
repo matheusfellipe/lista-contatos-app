@@ -6,7 +6,7 @@ namespace Domain.Finders
     {
         Task<List<ContatoItemDto>> GetContatos(string? nome, string? sigla,string? order);
 
-        Task<bool> ContatoExistente(string cpf);
+        Task<bool> ContatoExistente(string cpf, DateTime dt_nascimento);
 
         Task<List<LotacaoItemDto>> ListaDepartamento();
     }

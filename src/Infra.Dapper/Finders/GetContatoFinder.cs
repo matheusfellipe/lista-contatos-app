@@ -16,10 +16,14 @@ namespace Infra.Dapper.Finders
         {
         }
 
-        public async Task<bool> ContatoExistente(string cpf)
+        public async Task<bool> ContatoExistente(string cpf, DateTime dt_nascimento)
         {
             const string QUERY = @"
-			              select * from pessoa p where cpf = @cpf;";
+			              SELECT * 
+                            FROM pessoa p 
+                            WHERE cpf = @cpf 
+                            AND dt_nascimento = @dt_nascimento;
+                            ";
 
             try
             {
@@ -28,7 +32,8 @@ namespace Infra.Dapper.Finders
                     QUERY,
                     new
                     {
-                        @cpf
+                        @cpf,
+                        @dt_nascimento
                     }
                     );
 
