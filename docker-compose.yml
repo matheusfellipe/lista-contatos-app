@@ -23,8 +23,7 @@ services:
       - "5432:5432"
     
     volumes:
-     - ./lotacao.sql:/docker-entrypoint-initdb.d/lotacao.sql
-     - ./pessoa.sql:/docker-entrypoint-initdb.d/pessoa.sql
+     - ./backup_oficina3_BD.sql:/docker-entrypoint-initdb.d/backup_oficina3_BD.sql
     environment:
       POSTGRES_PASSWORD: "Postgres2022!"
 
