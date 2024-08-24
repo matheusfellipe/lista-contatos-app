@@ -57,9 +57,10 @@ namespace Infra.Dapper.Finders
         public async Task<List<ContatoItemDto>> GetContatos(string? nome,string? sigla,string? order)
         {
              string QUERY = @"
-			               select p.*,l.departamento,l.sigla  from pessoa p 
-                                inner join lotacao l on p.id_lotacao = l.id_lotacao 
-                                WHERE 1=1";
+			               select p.id_pessoa as IdPessoa,p.cpf,p.nome,p.dt_nascimento as DtNascimento,p.telefone,p.dt_membro as DtMembro,p.id_lotacao as IdLotacao ,l.departamento,l.sigla  
+                            from pessoa p 
+                                 inner join lotacao l on p.id_lotacao = l.id_lotacao 
+                                 WHERE 1=1";
 
 
 

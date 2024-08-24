@@ -15,7 +15,10 @@ namespace Domain.Dto
         public string Nome { get; set; }
 
         [JsonPropertyName("dt_nascimento")]
-        public DateTimeOffset DtNascimento { get; set; }
+        public DateTime DtNascimento { get; set; }
+
+        [JsonPropertyName("dt_membro")]
+        public DateTime DtMembro { get; set; }
 
         [JsonPropertyName("telefone")]
         public string Telefone { get; set; }
