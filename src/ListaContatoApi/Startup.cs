@@ -19,13 +19,25 @@ namespace Web.Api
 
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
 
+
+                options.AddPolicy(name: "ContatoPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("*")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed(host => true);
+                    });
+            });
 
 
             services.AddSwaggerGen();
             services.AddFinders();
-            //services.AddHostedService<Worker>();
-        
+          
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -36,7 +48,7 @@ namespace Web.Api
             }
 
             app.UseRouting();
-
+            app.UseCors("ContatoPolicy");
 
             app.UseSwagger();
             app.UseSwaggerUI(sw =>
