@@ -26,7 +26,7 @@ namespace Web.Api
                 options.AddPolicy(name: "ContatoPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("*")
+                        builder.WithOrigins("http://localhost/*")
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()
