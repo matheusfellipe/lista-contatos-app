@@ -18,20 +18,15 @@ namespace Web.Api
            
 
             services.AddControllers();
-
+            
             services.AddCors(options =>
             {
 
-
-                options.AddPolicy(name: "ContatoPolicy",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials()
-                        .SetIsOriginAllowed(host => true);
-                    });
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+                });
+               
             });
 
 
