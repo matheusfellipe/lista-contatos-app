@@ -22,16 +22,11 @@ namespace Web.Api
             services.AddCors(options =>
             {
 
-                options.AddPolicy(name: "ContatoPolicy",
-                   builder =>
-                   {
-                       builder.WithOrigins("http://localhost:3000")
-                       .AllowAnyMethod()
-                       .AllowAnyHeader()
-                       .AllowCredentials()
-                       .SetIsOriginAllowed(host => true);
-                   });
-
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+                });
+               
             });
 
 
