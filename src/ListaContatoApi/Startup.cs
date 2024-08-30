@@ -42,7 +42,6 @@ namespace Web.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMiddleware<HashValidationMiddleware>();
             app.UseRouting();
             app.UseCors();
 
@@ -53,6 +52,7 @@ namespace Web.Api
                 sw.ConfigObject.DocExpansion = DocExpansion.None;
             });
 
+            app.UseMiddleware<HashValidationMiddleware>();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
