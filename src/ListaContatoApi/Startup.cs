@@ -31,7 +31,10 @@ namespace Web.Api
             });
 
 
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.OperationFilter<CustomHeaderOperationFilter>();
+            });
             services.AddFinders();
           
         }
