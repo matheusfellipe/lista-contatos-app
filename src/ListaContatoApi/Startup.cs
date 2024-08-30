@@ -1,4 +1,5 @@
 ﻿using Infra.Dapper;
+using ListaContatoApi.Middleware;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Globalization;
 
@@ -41,9 +42,9 @@ namespace Web.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseMiddleware<HashValidationMiddleware>();
             app.UseRouting();
-            app.UseCors("ContatoPolicy");
+            app.UseCors();
 
             app.UseSwagger();
             app.UseSwaggerUI(sw =>
