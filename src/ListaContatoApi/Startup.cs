@@ -16,18 +16,18 @@ namespace Web.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-           
+
 
             services.AddControllers();
-            
+
             services.AddCors(options =>
             {
 
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
-                });
-               
+                options.AddPolicy("AllowAll", builder =>
+             builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+
             });
 
 
@@ -36,7 +36,7 @@ namespace Web.Api
                 c.OperationFilter<CustomHeaderOperationFilter>();
             });
             services.AddFinders();
-          
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,7 +46,7 @@ namespace Web.Api
                 app.UseDeveloperExceptionPage();
             }
             app.UseRouting();
-            app.UseCors();
+            app.UseCors("AllowAll");
 
             app.UseSwagger();
             app.UseSwaggerUI(sw =>
